@@ -9,7 +9,7 @@ public class SubsetRandomizer {
     }
     int count = 0; // counter for adding to the subset
     while (count < size) {
-    	int i = (int)(Math.random() * (arr.length - 1));
+    	int i = (int)(Math.random() * (arr.length));
     	if (!truth[i]) {
     		subset[count] = arr[i];
     		truth[i] = true;
