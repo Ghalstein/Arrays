@@ -14,16 +14,14 @@ public class ThreeSum {
 	public static ArrayList<ArrayList<Integer>> findMatch(ArrayList<Integer> arr) {
 		createHash(arr);
 		ArrayList<ArrayList<Integer>> arrOfArrays = new ArrayList<>();
-		for (int i = 0; i < arr.size(); i++ ) {
-			for (int j = 0; j< arr.size(); j++) {
-				if (i != j && arr.get(j) <= arr.get(i)) {
-					if (hashTable.contains(-(arr.get(i) + arr.get(j)))) {
-						ArrayList<Integer> tempArr = new ArrayList<>();
-						tempArr.add(arr.get(i));
-						tempArr.add(arr.get(j));
-						tempArr.add(-(arr.get(i) + arr.get(j)));
-						arrOfArrays.add(tempArr);
-					}
+		for (int i = 0; i < arr.size() / 2; i++ ) {
+			for (int j = i + 1; j < arr.size(); j++) {
+				if (hashTable.contains(-(arr.get(i) + arr.get(j)))) {
+					ArrayList<Integer> tempArr = new ArrayList<>();
+					tempArr.add(arr.get(i));
+					tempArr.add(arr.get(j));
+					tempArr.add(-(arr.get(i) + arr.get(j)));
+					arrOfArrays.add(tempArr);
 				}
 			}
 		}
