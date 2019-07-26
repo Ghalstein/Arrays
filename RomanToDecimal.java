@@ -24,7 +24,7 @@ public class RomanToDecimal {
 		for (int i = 0; i < romanNumerals.length(); i++) {
 			if (i < romanNumerals.length() - 1) {	
 				if (map.get(romanNumerals.charAt(i)) < map.get(romanNumerals.charAt(i + 1) )) {
-					value += map.get(romanNumerals.charAt(i)) - 2;
+					value -= map.get(romanNumerals.charAt(i));
 				}		
 				else {
 					value += map.get(romanNumerals.charAt(i));
