@@ -22,11 +22,16 @@ public class RomanToDecimal {
 		createHash();
 		int value = 0;
 		for (int i = 0; i < romanNumerals.length(); i++) {
-			if (romanNumerals.charAt(i) < romanNumerals.charAt(i + 1) ) {
-				// exception
+			if (i < romanNumerals.length() - 1) {	
+				if (map.get(romanNumerals.charAt(i)) < map.get(romanNumerals.charAt(i + 1) )) {
+					value += map.get(romanNumerals.charAt(i)) - 2;
+				}		
+				else {
+					value += map.get(romanNumerals.charAt(i));
+				}
 			}
 			else {
-				// add as normal
+				value += map.get(romanNumerals.charAt(i));
 			}
 		}
 		return value;
