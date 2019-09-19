@@ -37,7 +37,7 @@ public class StringCompress {
 
 	// if the repeats can only be consecutive
 	public static String consecutive(String str) {
-		String compressedStr = "";
+		StringBuilder compressedStr = new StringBuilder();
 
 		// iterate through the string and add as repeat is broken
 		int count = 1;
@@ -47,14 +47,16 @@ public class StringCompress {
 				++count; 
 			}
 			else {
-				compressedStr += str.charAt(i) + "" + count;
+				compressedStr.append(str.charAt(i));
+				compressedStr.append(count);
 				count = 1;
 			}
 		}
 		// including the final character
-		compressedStr += str.charAt(str.length() - 1) + "" + count;
+		compressedStr.append(str.charAt(str.length() - 1));
+		compressedStr.append(count);
 
-		return compressedStr;
+		return compressedStr.toString();
 	}
 
 	public static void main(String[] args) {
