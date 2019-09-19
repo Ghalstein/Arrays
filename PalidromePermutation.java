@@ -8,6 +8,7 @@ public class PalidromePermutation {
 		boolean oddFound = false;
 		int repeats = 1;
 		for (int i = 0; i < chars.length - 1; ++i) {
+			if (chars[i] == ' ' || chars[i + 1] == ' ') continue;
 			if (chars[i] == chars[i + 1]) {
 				++repeats;
 			}
@@ -28,7 +29,7 @@ public class PalidromePermutation {
 
 	public static void main(String[] args) {
 		System.out.println(valid("racecar"));
-		System.out.println(valid("tacocat"));
+		System.out.println(valid("taco cat"));
 		System.out.println(valid("tea"));
 	}
 }
