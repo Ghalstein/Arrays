@@ -24,8 +24,15 @@ public class StringCompress {
 		return hashMap;
 	}
 
-	public static String create() {
-		
+	public static String create(String str) {
+		HashMap<Character, Integer> hash = hashString(str);
+
+		// iterate through hasmap to create compressed String
+		String compressedStr = "";
+		for (HashMap.Entry<Character, Integer> entry : hash.entrySet()) {
+			compressedStr += entry.getKey() + "" + entry.getValue();
+		}
+		return compressedStr;
 	}
 
 	public static void main(String[] args) {
