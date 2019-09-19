@@ -7,6 +7,7 @@ public class OneEdit {
 	private static HashMap<Character, Integer> hashChars1 = new HashMap<>();
 	private static HashMap<Character, Integer> hashChars2 = new HashMap<>();
 	public static boolean valid(String str1, String str2) {
+		// if size difference is greater than one than it is definitely not true
 		if (str1.length() - str2.length() > 1 || str1.length() - str2.length() < -1) {
 			return false;
 		}
@@ -29,9 +30,12 @@ public class OneEdit {
 			}
 		}
 		boolean differenceFound = false;
+		// deciding which hash to iterate through
 		if (hashChars1.size() > hashChars2.size()) {
 			for (HashMap.Entry<Character, Integer> entry : hashChars1.entrySet()) {
+				//deciding if the other hash even has the right key
 				if (!hashChars2.containsKey(entry.getKey())) {
+					// if there was already a difference found return false
 					if (differenceFound) {
 						return false;
 					}
