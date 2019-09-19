@@ -36,6 +36,7 @@ public class StringCompress {
 	}
 
 	public static void main(String[] args) {
-
+		System.out.println(create("aabcccccaaa"));
+		
 	}
 }
