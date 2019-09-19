@@ -31,5 +31,6 @@ public class PalidromePermutation {
 		System.out.println(valid("racecar"));
 		System.out.println(valid("taco cat"));
 		System.out.println(valid("tea"));
+		System.out.println(valid("cat taco"));
 	}
 }
