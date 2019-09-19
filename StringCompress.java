@@ -35,8 +35,30 @@ public class StringCompress {
 		return compressedStr;
 	}
 
+	// if the repeats can only be consecutive
+	public static String consecutive(String str) {
+		String compressedStr = "";
+
+		// iterate through the string and add as repeat is broken
+		int count = 1;
+		for (int i = 0; i < str.length() - 1; ++i) {
+
+			if (str.charAt(i) == str.charAt(i + 1)) {
+				++count; 
+			}
+			else {
+				compressedStr += str.charAt(i) + "" + count;
+				count = 1;
+			}
+		}
+		// including the final character
+		compressedStr += str.charAt(str.length() - 1) + "" + count;
+
+		return compressedStr;
+	}
+
 	public static void main(String[] args) {
 		System.out.println(create("aabcccccaaa"));
-		
+		System.out.println(consecutive("aabcccccaaa"));
 	}
 }
