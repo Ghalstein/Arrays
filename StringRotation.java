@@ -28,7 +28,8 @@ public class StringRotation {
 			}
 		}
 		if (reps > 0) {
-			for (int i = 0; i < str1.length() - reps; ++i) {
+			int initReps = reps;
+			for (int i = 0; i < str1.length() - initReps; ++i) {
 				if (str1.charAt(reps) == str2.charAt(i)) {
 					++reps;
 				}
@@ -46,6 +47,8 @@ public class StringRotation {
 	}
 
 	public static void main(String[] args) {
-
+		System.out.println(valid("tea", "ate"));
+		System.out.println(valid("tea", "tet"));
+		System.out.println(valid("waterbottle", "erbottlewat"));
 	}
 }
