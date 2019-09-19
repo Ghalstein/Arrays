@@ -4,6 +4,8 @@ Try traversing through each row, if zero is found set the whole row to zero
 else keep traversing
 */
 
+import java.util.*;
+
 public class ZeroMatrix {
 
 	public static void zerofy(int[][] matrix) {
@@ -20,6 +22,16 @@ public class ZeroMatrix {
 
 	public static void main(String[] args) {
 		int[][] matrix = new int[3][3];
-		
+		matrix[0][0] = 1;
+		matrix[0][1] = 2;
+		matrix[0][2] = 3;
+		matrix[1][0] = 1;
+		matrix[1][1] = 0;
+		matrix[1][2] = 3;
+		matrix[2][0] = 1;
+		matrix[2][1] = 2;
+		matrix[2][2] = 0;
+		zerofy(matrix);
+		System.out.println(Arrays.deepToString(matrix));
 	}
 }
