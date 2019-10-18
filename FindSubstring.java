@@ -1,6 +1,6 @@
 public class FindSubstring {
 
-  public int strStr(String haystack, String needle) {
+  public static int strStr(String haystack, String needle) {
     // have a string and substring to search for linearly within the string
     // iterator for substring
     int j = 0;
@@ -9,7 +9,6 @@ public class FindSubstring {
       if (needle.equals("")) return 0;
       if (needle.length() > haystack.length()) return -1;
       if (haystack.charAt(i) == needle.charAt(j)) {
-        System.out.println(j);
         ++j;
         if (j == needle.length()) return ++i - needle.length();
       }
@@ -25,6 +24,8 @@ public class FindSubstring {
     return -1;
   }
   public static void main(String[] args) {
-
+    System.out.println("mississippi: pi " + strStr("mississippi", "pi"));
+    System.out.println("mississippi: issi " + strStr("mississippi", "issi"));
+    System.out.println("mississippi: issip " + strStr("mississippi", "issip"));
   }
 }
